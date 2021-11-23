@@ -1,11 +1,15 @@
 import React from 'react';
 import { Layout } from 'antd';
+import { Link } from 'react-router-dom'
 
 const { Footer } = Layout;
 
 const FooterMovie = () => {
   return (
-    <Footer style={{ textAlign: 'center' }}>App movie ©2021 Created by ReactJS2012</Footer>
+    <Footer style={{ textAlign: 'center', fontWeight: '500', fontSize: '15px' }}>App movie ©2021 Created by <a href="https://www.facebook.com/udiahn/">udiahn</a>
+    
+    
+    </Footer>
   )
 }
 export default React.memo(FooterMovie);

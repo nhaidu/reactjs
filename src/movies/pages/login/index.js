@@ -39,7 +39,7 @@ const LoginPage = () => {
       helper.saveToken(token)
       history.push('/search-movie');
     } else {
-      setErrorLogin('account invalid');
+      setErrorLogin('Nhập sai rồi, đồ quỷ sứ hà...');
     }
   };
 
@@ -50,7 +50,7 @@ const LoginPage = () => {
   return (
     <Row style={{ marginTop: '30px'}}>
       <Col span={10} offset={7}>
-        <h2 style={{ textAlign: 'center', color: 'black' }}>Login user</h2>
+        <h2 style={{ textAlign: 'center', color: 'black'}}>Cùng vào xem phim nào</h2>
         <h3 style={{ textAlign: 'center', color: 'red' }}>
           { errorLogin }
         </h3>

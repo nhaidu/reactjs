@@ -1,4 +1,4 @@
-import React, { lazy, Suspense} from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Skeleton } from 'antd'; 
 import { helper } from '../helpers/common'; 
 import {
