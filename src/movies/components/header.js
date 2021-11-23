@@ -70,7 +70,7 @@ const HeaderMovie = () => {
   const history = useHistory();
   const { pathname } = useLocation();
   const info = helper.decryptTokenLocalStorage();
-  const username = info !== null ? info.username : null;
+  // const username = info !== null ? info.username : null;
   const logoutUser = () => {
     helper.removeToken();
     history.push('/');
