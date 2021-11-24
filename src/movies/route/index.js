@@ -10,7 +10,7 @@ import {
 
 const SearchPage = lazy(() => import('../pages/search/index'));
 const PopularPage = lazy(() => import('../pages/popular/index'));
-const UpcomingPage = lazy(() => import('../pages/upcoming/index'));
+// const UpcomingPage = lazy(() => import('../pages/upcoming/index'));
 const LoginPage = lazy(() => import('../pages/login/index'));
 const DetailPage =  lazy(() => import('../pages/detail/index'));
 const WatchPage =  lazy(() => import('../pages/watchmovie/index'));

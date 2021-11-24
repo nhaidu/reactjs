@@ -18,6 +18,7 @@ const WatchMovie = () => {
         <Row style={{ background:'#000', height: '700px' }}>
             <DivPlayer style={{ margin: 'auto', background: '#0000' }}>
                 <iframe 
+                    title="Chúa tể phim"
                     src={url}
                     style={{border: 'none', height: '100%', width: '100%'}}  
                     allowFullScreen

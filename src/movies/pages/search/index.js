@@ -40,7 +40,7 @@ const SearchMovie = () => {
                 movies={movies}
                 loading={loading}
             />
-            {movies.length!=0 &&(
+            {movies.length!==0 &&(
             <Row>
                 <Col span={20} offset={2}>
                     <div style={{ textAlign:'center', marginTop:'30px' }}  >
