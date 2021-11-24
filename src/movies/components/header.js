@@ -86,15 +86,16 @@ const HeaderMovie = () => {
 
       </DivLogoHeader>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={pathname} >
-        <Menu.Item key="/search-movie" > 
-          <Link to="/search-movie">Search movie</Link>
-        </Menu.Item>
         <Menu.Item key="/popular-movie">
           <Link to="/popular-movie">Popular movies</Link>
         </Menu.Item>
-        <Menu.Item key="/upcoming-movie">
-          <Link to="/upcoming-movie">Upcoming movies</Link>
+        <Menu.Item key="/search-movie" > 
+          <Link to="/search-movie">Search movie</Link>
         </Menu.Item>
+        
+        {/* <Menu.Item key="/upcoming-movie">
+          <Link to="/upcoming-movie">Upcoming movies</Link>
+        </Menu.Item> */}
 
         {info === null &&
           <Menu.Item key="/">

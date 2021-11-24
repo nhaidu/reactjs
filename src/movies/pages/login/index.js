@@ -37,7 +37,7 @@ const LoginPage = () => {
       setErrorLogin('');
       //console.log(token);
       helper.saveToken(token)
-      history.push('/search-movie');
+      history.push('/popular-movie');
     } else {
       setErrorLogin('Nhập sai rồi, đồ quỷ sứ hà...');
     }
@@ -74,7 +74,7 @@ const LoginPage = () => {
               },
             ]}
           >
-            <Input />
+            <Input placeholder="Tài khoản là: admin" />
           </Form.Item>
 
           <Form.Item
@@ -87,7 +87,7 @@ const LoginPage = () => {
               },
             ]}
           >
-            <Input.Password />
+            <Input.Password placeholder="Mật khẩu là: 123" />
           </Form.Item>
 
           <Form.Item {...tailLayout}>

@@ -9,16 +9,22 @@ const getDataComingMovie = async (fdate, tdate, page) => {
   const result = respone.status === 200 ? respone.data : {};
   return result;
 }
-// const searchMovies = async (keyword = '', page = 1) => {
-//   const urlSearchMovies=`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716&page=${page}`;
-//   const response = await axios.get(urlSearchMovies);
-//   const result = response.status === 200 ? response.data : [];
-//   return result;
-// }
+const searchMovies = async (keyword = '', page = 1) => {
+  const urlSearchMovies=`https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=cfe422613b250f702980a3bbf9e90716&page=${page}`;
+  const response = await axios.get(urlSearchMovies);
+  const result = response.status === 200 ? response.data : [];
+  return result;
+}
 const getDataMovieById= async (id) => {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&&language=en-US&append_to_response=videos%2Cimages&include_image_language=en%2Cnull&fbclid=IwAR0hh5oT80IwvQYEo3umQVMkadNIerixRBYi7hnlK-GCrjtOBSNS-GL2t7o`;
   const respone = await axios.get(url);
   const result = respone.status === 200 ? respone.data : {};
+  return result;
+}
+const getDataMovies = async (page = 1) => {
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`;
+  const response = await axios.get(url);
+  const result = response.status === 200 ? response.data : {};
   return result;
 }
 
@@ -40,5 +46,7 @@ const loginUser = (user, pass) => {
 export const api = {
   getDataMovieById,
   loginUser,
-  getDataComingMovie
+  getDataComingMovie,
+  searchMovies,
+  getDataMovies
 }

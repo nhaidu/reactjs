@@ -6,6 +6,8 @@ import { api } from '../../services/api';
 import { helper } from '../../helpers/common';
 import 'react-modal-video/css/modal-video.min.css';
 import ModalVideo from 'react-modal-video';
+import { Link } from 'react-router-dom';
+import slugify from 'react-slugify';
 
 const DetailMovie = () => {
     const { id } = useParams();
@@ -64,16 +66,21 @@ const DetailMovie = () => {
                             <Button 
                                 type="primary" 
                                 onClick={()=> setOpen(true)}
-                            >View trailer</Button>  
+                            >
+                                View trailer
+                            </Button>  
                             <ModalVideo 
                                 channel='youtube' 
                                 isOpen={isOpen} 
                                 videoId={movie.videos.results[0].key} 
                                 onClose={() => setOpen(false)} 
                             />
-                            <p></p>
                         </React.Fragment>)
                     }
+                    <Button type="primary" style={{ marginLeft: '20px' }}>
+                        <Link to={`/watch/${slugify(movie.title)}~${movie.id}`}>Watch now</Link>
+                    </Button>  
+                    <p></p>
                     <Row>
                         {movie.images.backdrops.map((item, index) => (
                             <Col span={4} style={{ margin: '2px 2px auto' }}>
