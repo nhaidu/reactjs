@@ -10,8 +10,8 @@ const SearchMovie = () => {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [keyword, setKeyword] = useState("");
-//   const [totalItem, setTotalItem] = useState(0);
-  const [total_pages, setTotalPages] = useState(0);
+  const [totalItem, setTotalItem] = useState(0);
+//   const [total_pages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
 
 
@@ -25,8 +25,8 @@ const SearchMovie = () => {
           const dataMovies = await api.searchMovies(nameMovie, p);
           if(dataMovies.hasOwnProperty('results')){
                 setMovies(dataMovies.results);
-                // setTotalItem(dataMovies.total_results);
-                setTotalPages(dataMovies.total_pages);
+                setTotalItem(dataMovies.total_results);
+                // setTotalPages(dataMovies.total_pages);
           }
            setLoading(false);
       }
@@ -50,7 +50,7 @@ const SearchMovie = () => {
                         <Pagination 
                             size={20} 
                             current={page} 
-                            total={total_pages}  
+                            total={totalItem/2}  
                             showSizeChanger={false}
                             onChange={pages => searchMoviesByName(keyword, pages)}
                         />    
