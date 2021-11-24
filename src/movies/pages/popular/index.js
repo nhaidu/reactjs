@@ -13,7 +13,7 @@ const PopularMovie = () => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [dataMovies, setDataMovies] = useState({});
-  const [totalItems, setTotalItems] = useState(0);
+  // const [totalItems, setTotalItems] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const PopularMovie = () => {
       if(!helper.isEmptyObject(data)){
         if(data.hasOwnProperty('results')){
           setDataMovies(data.results);
-          setTotalItems(data.total_results);
+          // setTotalItems(data.total_results);
           setTotalPage(data.total_pages);
         }
       }
@@ -38,7 +38,7 @@ const PopularMovie = () => {
       setPage(p);
     }
   }
-  
+  console.log(totalPage);
   return (
     <MasterLayoutMovie>
       <Row>
@@ -51,13 +51,13 @@ const PopularMovie = () => {
           <Col span={20} offset={2}>
             <div style={{ textAlign:'center', marginTop:'30px' }}  >
               <Pagination 
-                            size={20} 
-                            current={page} 
-                            total={totalItems}  
-                            showSizeChanger={false}
-                            onChange={pages => changePage(pages)}
-                        />    
-                    </div>
+                size={20} 
+                current={page} 
+                total={totalPage}  
+                showSizeChanger={false}
+                onChange={pages => changePage(pages)}
+              />    
+            </div>
             </Col> : null}
           
         </Col>
